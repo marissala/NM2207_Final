@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/appstyle.css">   
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="jslibs/raphael.js"></script>
+        <script type="text/javascript" data-main="appscripts/main.js" src="jslibs/require.js"></script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Forests</title>
+    </head>
+
+  <body>
+    <header><header>Forestsss</header>
+
+        <p>--Text about trees and forests--</p>
+    </header>
+    
+    <div id='form_container'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2>Tree canvas</h2>
+                <p>Algorithmic tree generator</p>
+            </div>	
+
+        <canvas style="border:4px solid #c0c0c0;" id="canvas0"></canvas>
+        
+        <div style="float:left;">
+                <li class="buttons">
+                    <input id="redraw0" class="button_text" type="button" value="Redraw" />
+                    <input id="saveImage0" class="button_text" type="button" value="Save Image" />
+                </li>
+                </div>
+                <div style="float:right; margin-right: 20px;">
+                <label class="description" for="element_1">Options</label>
+                <span>
+                    <input id="auto0" name="auto" class="element checkbox" type="checkbox" />
+                    <label class="choice">Auto Redraw</label>
+                    <input id="noLeaves0" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                    <label class="choice">Draw leaves</label>
+                    <label class="description" for="element_1">Tree Spread</label>
+                    <div>
+                    <select class="element select large" id="spread0" name="spread"> 
+                        <option value="0.3" >0.3</option>
+                        <option value="0.4" >0.4</option>
+                        <option value="0.5" >0.5</option>
+                        <option value="0.6" selected="selected">0.6</option>
+                        <option value="0.7" >0.7</option>
+                        <option value="0.8" >0.8</option>
+                        <option value="0.9" >0.9</option>
+                    </select>
+                    </div> 
+                    <div id="ltype">
+                    <label class="description" for="element_1">Leaves Type</label>
+                    <select class="element select large" id="leaveType0" name="leaveType"> 
+                        <option value="1">Small</option>
+                        <option value="2"  selected="selected">Medium</option>
+                        <option value="3">Large</option>
+                        <option value="4">Thin</option>
+                    </select>
+                    </div> 
+                </span> 
+                </div>
+            </form>	
+            <div id="footer">
+            </div>
+    </div>
+
+
+<div id='form_container'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2>Tree canvas</h2>
+                <p>Algorithmic tree generator</p>
+            </div>	
+
+        <canvas style="border:4px solid #c0c0c0;" id="canvas1"></canvas>
+        
+        <div style="float:left;">
+                <li class="buttons">
+                    <input id="redraw1" class="button_text" type="button" value="Redraw" />
+                    <input id="saveImage1" class="button_text" type="button" value="Save Image" />
+                </li>
+                </div>
+                <div style="float:right; margin-right: 20px;">
+                <label class="description" for="element_1">Options</label>
+                <span>
+                    <input id="auto1" name="auto" class="element checkbox" type="checkbox" />
+                    <label class="choice">Auto Redraw</label>
+                    <input id="noLeaves1" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                    <label class="choice">Draw leaves</label>
+                    <label class="description" for="element_1">Tree Spread</label>
+                    <div>
+                    <select class="element select large" id="spread1" name="spread"> 
+                        <option value="0.3" >0.3</option>
+                        <option value="0.4" >0.4</option>
+                        <option value="0.5" >0.5</option>
+                        <option value="0.6" selected="selected">0.6</option>
+                        <option value="0.7" >0.7</option>
+                        <option value="0.8" >0.8</option>
+                        <option value="0.9" >0.9</option>
+                    </select>
+                    </div> 
+                    <div id="ltype">
+                    <label class="description" for="element_1">Leaves Type</label>
+                    <select class="element select large" id="leaveType1" name="leaveType"> 
+                        <option value="1">Small</option>
+                        <option value="2"  selected="selected">Medium</option>
+                        <option value="3">Large</option>
+                        <option value="4">Thin</option>
+                    </select>
+                    </div> 
+                </span> 
+                </div>
+            </form>	
+            <div id="footer">
+            </div>
+    </div>
+
+
+        <script type="application/javascript">
+
+var tree = {
+
+canvas:     '',
+ctx:        '',
+height:     0,
+width:      0,
+spread:     0.6,
+drawLeaves: true,
+leavesColor:'',
+leaveType:  this.MEDIUM_LEAVES,
+
+MAX_BRANCH_WIDTH:   20,
+SMALL_LEAVES:       10,
+MEDIUM_LEAVES:      200,
+BIG_LEAVES:         500,
+THIN_LEAVES:        900,
+
+/**
+ * @member draw
+ * tree.draw() initializes tthe tree structure
+ *
+ * @param {object} ctx      the canvas context
+ * @param {integer} h       height of the canvas
+ * @param {integer} w       width of the canvas
+ * @param {float} spread    how much the tree branches are spread
+ *                          Ranges from 0.3 - 1.
+ * @param {boolean} leaves  draw leaves if set to true    
+ *
+ */
+draw : function(ctx, h, w, spread, leaves, leaveType) {
+    // Set how much the tree branches are spread
+    if(spread >= 0.3 && spread <= 1) {
+        this.spread = spread;
+    } else {
+        this.spread = 0.6;
+    }
+    
+    if(leaves === true || leaves === false) {
+        this.drawLeaves = leaves;
+    } else {
+        this.leaves = true;
+    }
+    
+    if(leaveType == this.SMALL_LEAVES || 
+       leaveType == this.MEDIUM_LEAVES || 
+       leaveType == this.BIG_LEAVES || 
+       leaveType == this.THIN_LEAVES) {
+        this.leaveType = leaveType;
+    } else {
+        this.leaveType = this.MEDIUM_LEAVES;
+    }
+    
+    this.ctx = ctx;
+    this.height = h;
+    this.width = w;
+    this.ctx.clearRect(0,0,this.width,this.height);
+    // Center the tree in the window
+    this.ctx.translate(this.width/2,this.height);
+    // Set the leaves to a random color
+    this.leavesColor = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6);
+    // Set branch thickness
+    this.ctx.lineWidth = 1 + (Math.random() * this.MAX_BRANCH_WIDTH);
+    this.ctx.lineJoin = 'round';
+    
+    this.branch(0);
+},
+
+/**
+ * @member branch
+ * tree.branch() main tree drawing function
+ *
+ * @param {String} depth the maimum depth the tree can branch,
+ *        Keep this value near 12, larger value take linger to render.
+ *
+ */
+branch : function(depth) {
+    if (depth < 12) 
+    {
+        this.ctx.beginPath();
+        this.ctx.moveTo(0,0);
+        this.ctx.lineTo(0,-(this.height)/10);
+
+        this.ctx.stroke();
+        
+        this.ctx.translate(0,-this.height/10);
+        // Random integer from -0.1 to 0.1
+        var randomN = -(Math.random() * 0.1) + 0.1;
+
+        this.ctx.rotate(randomN); 
+
+        if ((Math.random() * 1) < this.spread)
+        {
+            // Draw the left branches
+            this.ctx.rotate(-0.35);
+            this.ctx.scale(0.7,0.7);
+            this.ctx.save();
+            this.branch(depth + 1);
+            // Draw the right branches
+            this.ctx.restore();  
+            this.ctx.rotate(0.6);
+            this.ctx.save();
+            this.branch(depth + 1);   
+            this.ctx.restore();        
+        }
+        else 
+        { 
+            this.branch(depth);
+        }
+
+    }
+    else
+    {   
+        // Now that we have done drawing branches, draw the leaves
+        if(this.drawLeaves) {
+            var lengthFactor = 200;
+            if(this.leaveType === this.THIN_LEAVES) {
+                lengthFactor = 10;
+            }
+            this.ctx.fillStyle = this.leavesColor;
+            this.ctx.fillRect(0, 0, this.leaveType, lengthFactor);
+            this.ctx.stroke();
+        }
+    }
+}
+};
+
+            var height = 400;
+            var width = 250;  
+            var intervalId = 0;
+            
+            //var canvas1 = document.getElementById("canvas1");
+            //var canvas2 = document.getElementById("canvas2");
+
+            var canvases = [];
+            for( var i = 0; i < 2; i++ ) {
+                canvases[i] = document.getElementById("canvas" + i);
+            }
+            var redraws = [];
+            for( var i = 0; i < 2; i++ ) {
+                redraws[i] = document.getElementById("redraw" + i);
+            }
+            var saveImages = [];
+            for( var i = 0; i < 2; i++ ) {
+                saveImages[i] = document.getElementById("saveImage" + i);
+            }
+            var noLeavesS = [];
+            for( var i = 0; i < 2; i++ ) {
+                noLeavesS[i] = document.getElementById("noLeaves" + i);
+            }
+            var leaveTypes = [];
+            for( var i = 0; i < 2; i++ ) {
+                leaveTypes[i] = document.getElementById("leaveType" + i);
+            }
+            var autos = [];
+            for( var i = 0; i < 2; i++ ) {
+                autos[i] = document.getElementById("auto" + i);
+            }
+
+            var spreads = [];
+            for( var i = 0; i < 2; i++ ) {
+                spreads[i] = document.getElementById("spread" + i);
+            }
+
+
+
+            //var canvases = [canvas1, canvas2]; 
+
+                function init(Input) {
+                    //var canvas = canvases[i];
+                    
+                    if(Input.canvas.getContext("2d")) {
+                
+                    Input.redraw.onclick = function() {
+                        drawTree();
+                    } 
+                    
+                    Input.saveImage.onclick = function() {
+                        window.location = canvas.toDataURL("image/png");
+                    }
+                    
+                    Input.noLeaves.onclick = function() {
+                        if(this.checked == false)
+                            Input.leaveType.disabled = true;
+                        else
+                            Input.leaveType.disabled = false;
+                    }
+                    
+                    Input.auto.onclick = function() {
+                        if(this.checked == false)
+                            clearInterval(intervalId);
+                        else
+                            intervalId = setInterval ("drawTree()", 1000 );
+                    }
+                    
+                    Input.canvas.height = height;
+                    Input.canvas.width = width;
+                    ctx = Input.canvas.getContext("2d");
+                    drawTree();
+                    
+                    } else {
+                        document.getElementById('form_container').innerHTML = "Your browser doen't support Canvas!";
+                    }
+                };
+            
+                function drawTree() {
+                    var drawLeaves = Input.noLeaves.checked;
+                    var treeSpread = Input.spread.value;
+                    var temp  = Input.leaveType.value;
+                    var leaveType = '';
+
+                    switch(temp) {
+                        case '1': leaveType = tree.SMALL_LEAVES;
+                                break;
+                        case '2': leaveType = tree.MEDIUM_LEAVES;
+                                break;
+                        case '3': leaveType = tree.BIG_LEAVES;
+                                break;
+                        case '4': leaveType = tree.THIN_LEAVES;
+                                break;
+                        default:leaveType = tree.MEDIUM_LEAVES;
+                    }
+
+                    ctx.save();
+                    tree.draw(ctx,height,width,treeSpread,drawLeaves,leaveType);
+                    ctx.restore();
+            }
+        
+            for (var i = 0; i < canvases.length; i++) {
+                
+                //Creating the input Input for the function, this should have all attributes that are needed to be retrieved via getelementbyid
+                var Input = {canvas:canvases[i], 
+                redraw: redraws[i], 
+                saveImage:saveImages[i],
+                noLeaves:noLeavesS[i],
+                leaveType:leaveTypes[i],
+                auto:autos[i],
+                spread:spreads[i]};
+
+                init(Input);
+
+            }
+            
+    
+
+        </script>
+	</body>        
+</html>
+
