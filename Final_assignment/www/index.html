@@ -18,6 +18,7 @@
         <p>--Text about trees and forests--</p>
     </header>
     
+    <div id='wrapper'>
     <div id='form_container0'>
         
         <form id="form_89901" class="appnitro">
@@ -26,7 +27,7 @@
                 <p>Algorithmic tree generator</p>
             </div>	
 
-        <canvas style="border:4px solid #c0c0c0;" id="canvas0"></canvas>
+        <canvas style="border:4px solid #ffffff;" id="canvas0"></canvas>
         
         <div style="float:left;">
                 <li class="buttons">
@@ -34,7 +35,7 @@
                     <input id="saveImage0" class="button_text" type="button" value="Save Image" />
                 </li>
                 </div>
-                <div style="float:right; margin-right: 20px;">
+                <div style="float:right;">
                 <label class="description" for="element_1">Options</label>
                 <span>
                     <input id="auto0" name="auto" class="element checkbox" type="checkbox" />
@@ -74,11 +75,11 @@
         
         <form id="form_89901" class="appnitro">
             <div class="form_description">
-                <h2>Tree canvas</h2>
-                <p>Algorithmic tree generator</p>
+                <h2></h2><br>
+                <p></p><br> <br>
             </div>	
 
-        <canvas style="border:4px solid #c0c0c0;" id="canvas1"></canvas>
+        <canvas style="border:4px solid #ffffff;" id="canvas1"></canvas>
         
         <div style="float:left;">
                 <li class="buttons">
@@ -86,7 +87,7 @@
                     <input id="saveImage1" class="button_text" type="button" value="Save Image" />
                 </li>
                 </div>
-                <div style="float:right; margin-right: 20px;">
+                <div style="float:right;">
                 <label class="description" for="element_1">Options</label>
                 <span>
                     <input id="auto1" name="auto" class="element checkbox" type="checkbox" />
@@ -120,6 +121,59 @@
             <div id="footer">
             </div>
     </div>
+
+    <div id='form_container2'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2></h2> <br> 
+                <p></p><br> <br>
+            </div>	
+
+        <canvas style="border:4px solid #ffffff;" id="canvas2"></canvas>
+        
+        <div style="float:left;">
+                <li class="buttons">
+                    <input id="redraw2" class="button_text" type="button" value="Redraw" />
+                    <input id="saveImage2" class="button_text" type="button" value="Save Image" />
+                </li>
+                </div>
+                <div style="float:right;">
+                <label class="description" for="element_1">Options</label>
+                <span>
+                    <input id="auto2" name="auto" class="element checkbox" type="checkbox" />
+                    <label class="choice">Auto Redraw</label>
+                    <input id="noLeaves2" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                    <label class="choice">Draw leaves</label>
+                    <label class="description" for="element_1">Tree Spread</label>
+                    <div>
+                    <select class="element select large" id="spread2" name="spread"> 
+                        <option value="0.3" >0.3</option>
+                        <option value="0.4" >0.4</option>
+                        <option value="0.5" >0.5</option>
+                        <option value="0.6" selected="selected">0.6</option>
+                        <option value="0.7" >0.7</option>
+                        <option value="0.8" >0.8</option>
+                        <option value="0.9" >0.9</option>
+                    </select>
+                    </div> 
+                    <div id="ltype">
+                    <label class="description" for="element_1">Leaves Type</label>
+                    <select class="element select large" id="leaveType2" name="leaveType"> 
+                        <option value="1">Small</option>
+                        <option value="2"  selected="selected">Medium</option>
+                        <option value="3">Large</option>
+                        <option value="4">Thin</option>
+                    </select>
+                    </div> 
+                </span> 
+                </div>
+            </form>	
+            <div id="footer">
+            </div>
+    </div>
+
+</div>
 
 
         <script type="application/javascript">
@@ -257,33 +311,35 @@ branch : function(depth) {
             //var canvas1 = document.getElementById("canvas1");
             //var canvas2 = document.getElementById("canvas2");
 
+            m = 3; //canvas number
+
             var canvases = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 canvases[i] = document.getElementById("canvas" + i);
             }
             var redraws = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 redraws[i] = document.getElementById("redraw" + i);
             }
             var saveImages = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 saveImages[i] = document.getElementById("saveImage" + i);
             }
             var noLeavesS = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 noLeavesS[i] = document.getElementById("noLeaves" + i);
             }
             var leaveTypes = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 leaveTypes[i] = document.getElementById("leaveType" + i);
             }
             var autos = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 autos[i] = document.getElementById("auto" + i);
             }
 
             var spreads = [];
-            for( var i = 0; i < 2; i++ ) {
+            for( var i = 0; i < m; i++ ) {
                 spreads[i] = document.getElementById("spread" + i);
             }
 
