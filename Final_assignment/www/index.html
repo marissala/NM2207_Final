@@ -297,7 +297,8 @@ branch : function(depth) {
                     if(Input.canvas.getContext("2d")) {
                 
                     Input.redraw.onclick = function() {
-                        drawTree();
+                        ctx = Input.canvas.getContext("2d");
+                        drawTree(Input);
                     } 
                     
                     Input.saveImage.onclick = function() {
@@ -315,20 +316,22 @@ branch : function(depth) {
                         if(this.checked == false)
                             clearInterval(intervalId);
                         else
-                            intervalId = setInterval ("drawTree()", 1000 );
+                            ctx = Input.canvas.getContext("2d");
+                            intervalId = setInterval ("drawTree(Input)", 1000);
                     }
                     
                     Input.canvas.height = height;
                     Input.canvas.width = width;
                     ctx = Input.canvas.getContext("2d");
-                    drawTree();
+                    drawTree(Input);
                     
                     } else {
                         document.getElementById('form_container').innerHTML = "Your browser doen't support Canvas!";
                     }
                 };
             
-                function drawTree() {
+                function drawTree(Input) {
+                    //ctx = Input.canvas.getContext("2d");
                     var drawLeaves = Input.noLeaves.checked;
                     var treeSpread = Input.spread.value;
                     var temp  = Input.leaveType.value;
