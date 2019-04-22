@@ -305,6 +305,19 @@ branch : function(depth) {
                         window.location = canvas.toDataURL("image/png");
                     }
                     
+                    Input.noLeaves.onclick = function () {
+                     Input.leaveType.disabled = !Input.noLeaves.checked;
+                    };
+
+                    Input.auto.onclick = function () {
+                        if (Input.auto.checked) {
+                            auto = Input.auto;
+                            Input.intervalId = setInterval(() => drawTree(Input), 1000);
+                        } else {
+                            clearInterval(Input.intervalId);
+                        }
+                    }
+/*
                     Input.noLeaves.onclick = function() {
                         if(this.checked == false)
                             Input.leaveType.disabled = true;
@@ -318,7 +331,7 @@ branch : function(depth) {
                         else
                             ctx = Input.canvas.getContext("2d");
                             intervalId = setInterval ("drawTree(Input)", 1000);
-                    }
+                    }*/
                     
                     Input.canvas.height = height;
                     Input.canvas.width = width;
