@@ -122,7 +122,7 @@ body {
    }
 
 
-   .form_description
+   .description
    {
      border-bottom:1px dotted #ccc;
      clear:both;
@@ -214,14 +214,25 @@ body
 	text-align:center;
 }
 
-#form_container
+#form_container0
+{
+	background:#fff;
+	float: left;
+	/*margin:0 auto;*/
+	text-align:left;
+  width:230pt;
+  height:550pt;
+}
+
+#form_container1
 {
 	background:#fff;
 	
 	/*margin:0 auto;*/
 	text-align:left;
-  width:20%;
-  height:550pt;
+  width:230pt;
+	height:550pt;
+	overflow: hidden;
 }
 
 #top
