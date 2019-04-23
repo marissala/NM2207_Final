@@ -18,7 +18,229 @@
         <p>--Text about trees and forests--</p>
     </header>
     
-    <div id='wrapper'>
+<div id='wrapper' style="background-color: #ffffff">
+
+    <div id='form_container'>
+            <form id="form_89901" class="appnitro">
+                    <div class="form_description">
+                        <h2>Tree canvas</h2>
+                        <p>Drawing controls</p>
+                    </div>
+        
+                    <canvas style="border:4px solid #ffffff;" height="10" width="20" id="firstCanvas"></canvas>
+
+                    <div style="float:left;">
+                            <li class="buttons">
+                                <input id="redraw0" class="button_text" type="button" value="Redraw" />
+                                <input id="saveImage0" class="button_text" type="button" value="Save Image" />
+                            </li>
+                    </div>
+                            
+                    <div style="float:right;">
+                        <label class="description" for="element_1">Options</label>
+                        
+                        <span>
+                            <input id="auto0" name="auto" class="element checkbox" type="checkbox" />
+                            <label class="choice">Auto Redraw</label>
+                            <input id="noLeaves0" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                            <label class="choice">Draw leaves</label>
+                            <label class="description" for="element_1">Tree Spread</label>
+                            
+                            <div>
+                                <select class="element select large" id="spread0" name="spread"> 
+                                    <option value="0.3" >0.3</option>
+                                    <option value="0.4" >0.4</option>
+                                    <option value="0.5" >0.5</option>
+                                    <option value="0.6" selected="selected">0.6</option>
+                                    <option value="0.7" >0.7</option>
+                                    <option value="0.8" >0.8</option>
+                                    <option value="0.9" >0.9</option>
+                                </select>
+                            </div>
+
+                            <div id="ltype">
+                                <label class="description" for="element_1">Leaves Type</label>
+                                <select class="element select large" id="leaveType0" name="leaveType"> 
+                                    <option value="1">Small</option>
+                                    <option value="2"  selected="selected">Medium</option>
+                                    <option value="3">Large</option>
+                                    <option value="4">Thin</option>
+                                </select>
+                            </div> 
+                        </span> 
+                    </div>
+
+                    <hr>
+
+                    <div style="float:left;">
+                        <li class="buttons">
+                            <input id="redraw1" class="button_text" type="button" value="Redraw" />
+                            <input id="saveImage1" class="button_text" type="button" value="Save Image" />
+                        </li>
+                    </div>
+                    
+                    <div style="float:right;">
+                        <label class="description" for="element_1">Options</label>
+                        <span>
+                            <input id="auto1" name="auto" class="element checkbox" type="checkbox" />
+                            <label class="choice">Auto Redraw</label>
+                            <input id="noLeaves1" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                            <label class="choice">Draw leaves</label>
+                            <label class="description" for="element_1">Tree Spread</label>
+                            
+                            <div>
+                                <select class="element select large" id="spread1" name="spread"> 
+                                    <option value="0.3" >0.3</option>
+                                    <option value="0.4" >0.4</option>
+                                    <option value="0.5" >0.5</option>
+                                    <option value="0.6" selected="selected">0.6</option>
+                                    <option value="0.7" >0.7</option>
+                                    <option value="0.8" >0.8</option>
+                                    <option value="0.9" >0.9</option>
+                                </select>
+                            </div> 
+                            
+                            <div id="ltype">
+                                <label class="description" for="element_1">Leaves Type</label>
+                                <select class="element select large" id="leaveType1" name="leaveType"> 
+                                    <option value="1">Small</option>
+                                    <option value="2"  selected="selected">Medium</option>
+                                    <option value="3">Large</option>
+                                    <option value="4">Thin</option>
+                                </select>
+                            </div> 
+                        </span> 
+                    </div>
+
+                    <div style="float:left;">
+                        <li class="buttons">
+                            <input id="redraw2" class="button_text" type="button" value="Redraw" />
+                            <input id="saveImage2" class="button_text" type="button" value="Save Image" />
+                        </li>
+                    </div>
+                                        
+                    <div style="float:right;">
+                        <label class="description" for="element_1">Options</label>
+                        <span>
+                            <input id="auto2" name="auto" class="element checkbox" type="checkbox" />
+                            <label class="choice">Auto Redraw</label>
+                            <input id="noLeaves2" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                            <label class="choice">Draw leaves</label>
+                            <label class="description" for="element_1">Tree Spread</label>
+                                            
+                            <div>
+                                <select class="element select large" id="spread2" name="spread">
+                                    <option value="0.3" >0.3</option>
+                                    <option value="0.4" >0.4</option>
+                                    <option value="0.5" >0.5</option>
+                                    <option value="0.6" selected="selected">0.6</option>
+                                    <option value="0.7" >0.7</option>
+                                    <option value="0.8" >0.8</option>
+                                    <option value="0.9" >0.9</option> 
+                                </select>
+                                            
+                            </div> 
+                                            
+                            <div id="ltype">
+                                <label class="description" for="element_1">Leaves Type</label>
+                                    <select class="element select large" id="leaveType2" name="leaveType"> 
+                                        <option value="1">Small</option>
+                                        <option value="2"  selected="selected">Medium</option>
+                                        <option value="3">Large</option>
+                                        <option value="4">Thin</option>
+                                    </select>
+                            </div> 
+                        </span> 
+                    </div>
+
+                    <div style="float:left;">
+                        <li class="buttons">
+                            <input id="redraw3" class="button_text" type="button" value="Redraw" />
+                            <input id="saveImage3" class="button_text" type="button" value="Save Image" />
+                        </li>
+                    </div>
+                                        
+                    <div style="float:right;">
+                        <label class="description" for="element_1">Options</label>
+                        <span>
+                            <input id="auto3" name="auto" class="element checkbox" type="checkbox" />
+                            <label class="choice">Auto Redraw</label>
+                            <input id="noLeaves3" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                            <label class="choice">Draw leaves</label>
+                            <label class="description" for="element_1">Tree Spread</label>
+                                            
+                            <div>
+                                <select class="element select large" id="spread3" name="spread">
+                                    <option value="0.3" >0.3</option>
+                                    <option value="0.4" >0.4</option>
+                                    <option value="0.5" >0.5</option>
+                                    <option value="0.6" selected="selected">0.6</option>
+                                    <option value="0.7" >0.7</option>
+                                    <option value="0.8" >0.8</option>
+                                    <option value="0.9" >0.9</option> 
+                                </select>
+                                            
+                            </div> 
+                                            
+                            <div id="ltype">
+                                <label class="description" for="element_1">Leaves Type</label>
+                                    <select class="element select large" id="leaveType3" name="leaveType"> 
+                                        <option value="1">Small</option>
+                                        <option value="2"  selected="selected">Medium</option>
+                                        <option value="3">Large</option>
+                                        <option value="4">Thin</option>
+                                    </select>
+                            </div> 
+                        </span> 
+                    </div>
+
+                    <div style="float:left;">
+                        <li class="buttons">
+                            <input id="redraw4" class="button_text" type="button" value="Redraw" />
+                            <input id="saveImage4" class="button_text" type="button" value="Save Image" />
+                        </li>
+                    </div>
+                                        
+                    <div style="float:right;">
+                        <label class="description" for="element_1">Options</label>
+                        <span>
+                            <input id="auto4" name="auto" class="element checkbox" type="checkbox" />
+                            <label class="choice">Auto Redraw</label>
+                            <input id="noLeaves4" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
+                            <label class="choice">Draw leaves</label>
+                            <label class="description" for="element_1">Tree Spread</label>
+                                            
+                            <div>
+                                <select class="element select large" id="spread4" name="spread">
+                                    <option value="0.3" >0.3</option>
+                                    <option value="0.4" >0.4</option>
+                                    <option value="0.5" >0.5</option>
+                                    <option value="0.6" selected="selected">0.6</option>
+                                    <option value="0.7" >0.7</option>
+                                    <option value="0.8" >0.8</option>
+                                    <option value="0.9" >0.9</option> 
+                                </select>
+                                            
+                            </div> 
+                                            
+                            <div id="ltype">
+                                <label class="description" for="element_1">Leaves Type</label>
+                                    <select class="element select large" id="leaveType4" name="leaveType"> 
+                                        <option value="1">Small</option>
+                                        <option value="2"  selected="selected">Medium</option>
+                                        <option value="3">Large</option>
+                                        <option value="4">Thin</option>
+                                    </select>
+                            </div> 
+                        </span> 
+                    </div>
+            </form>
+                    
+            <div id="footer">
+            </div>
+
+    </div>
+
     <div id='form_container0'>
         
         <form id="form_89901" class="appnitro">
@@ -27,51 +249,15 @@
                 <p>Algorithmic tree generator</p>
             </div>	
 
-        <canvas style="border:4px solid #ffffff;" id="canvas0"></canvas>
+        <canvas style="border:4px solid #ffffff; z-index: 1; position:absolute;" id="canvas0"></canvas>
         
-        <div style="float:left;">
-                <li class="buttons">
-                    <input id="redraw0" class="button_text" type="button" value="Redraw" />
-                    <input id="saveImage0" class="button_text" type="button" value="Save Image" />
-                </li>
-                </div>
-                <div style="float:right;">
-                <label class="description" for="element_1">Options</label>
-                <span>
-                    <input id="auto0" name="auto" class="element checkbox" type="checkbox" />
-                    <label class="choice">Auto Redraw</label>
-                    <input id="noLeaves0" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
-                    <label class="choice">Draw leaves</label>
-                    <label class="description" for="element_1">Tree Spread</label>
-                    <div>
-                    <select class="element select large" id="spread0" name="spread"> 
-                        <option value="0.3" >0.3</option>
-                        <option value="0.4" >0.4</option>
-                        <option value="0.5" >0.5</option>
-                        <option value="0.6" selected="selected">0.6</option>
-                        <option value="0.7" >0.7</option>
-                        <option value="0.8" >0.8</option>
-                        <option value="0.9" >0.9</option>
-                    </select>
-                    </div> 
-                    <div id="ltype">
-                    <label class="description" for="element_1">Leaves Type</label>
-                    <select class="element select large" id="leaveType0" name="leaveType"> 
-                        <option value="1">Small</option>
-                        <option value="2"  selected="selected">Medium</option>
-                        <option value="3">Large</option>
-                        <option value="4">Thin</option>
-                    </select>
-                    </div> 
-                </span> 
-                </div>
-            </form>	
-            <div id="footer">
-            </div>
+
+        </form>	
+        <div id="footer">
+        </div>
     </div>
 
-
-<div id='form_container1'>
+    <div id='form_container1'>
         
         <form id="form_89901" class="appnitro">
             <div class="form_description">
@@ -79,47 +265,12 @@
                 <p></p><br> <br>
             </div>	
 
-        <canvas style="border:4px solid #ffffff;" id="canvas1"></canvas>
+        <canvas style="border:4px solid #ffffff; z-index: 2; position:absolute;" id="canvas1"></canvas>
         
-        <div style="float:left;">
-                <li class="buttons">
-                    <input id="redraw1" class="button_text" type="button" value="Redraw" />
-                    <input id="saveImage1" class="button_text" type="button" value="Save Image" />
-                </li>
-                </div>
-                <div style="float:right;">
-                <label class="description" for="element_1">Options</label>
-                <span>
-                    <input id="auto1" name="auto" class="element checkbox" type="checkbox" />
-                    <label class="choice">Auto Redraw</label>
-                    <input id="noLeaves1" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
-                    <label class="choice">Draw leaves</label>
-                    <label class="description" for="element_1">Tree Spread</label>
-                    <div>
-                    <select class="element select large" id="spread1" name="spread"> 
-                        <option value="0.3" >0.3</option>
-                        <option value="0.4" >0.4</option>
-                        <option value="0.5" >0.5</option>
-                        <option value="0.6" selected="selected">0.6</option>
-                        <option value="0.7" >0.7</option>
-                        <option value="0.8" >0.8</option>
-                        <option value="0.9" >0.9</option>
-                    </select>
-                    </div> 
-                    <div id="ltype">
-                    <label class="description" for="element_1">Leaves Type</label>
-                    <select class="element select large" id="leaveType1" name="leaveType"> 
-                        <option value="1">Small</option>
-                        <option value="2"  selected="selected">Medium</option>
-                        <option value="3">Large</option>
-                        <option value="4">Thin</option>
-                    </select>
-                    </div> 
-                </span> 
-                </div>
-            </form>	
-            <div id="footer">
-            </div>
+        </form>	
+        <div id="footer">
+        </div>
+        
     </div>
 
     <div id='form_container2'>
@@ -130,53 +281,66 @@
                 <p></p><br> <br>
             </div>	
 
-        <canvas style="border:4px solid #ffffff;" id="canvas2"></canvas>
+        <canvas style="border:4px solid #ffffff; z-index: 3; position:absolute;" id="canvas2"></canvas>
         
-        <div style="float:left;">
-                <li class="buttons">
-                    <input id="redraw2" class="button_text" type="button" value="Redraw" />
-                    <input id="saveImage2" class="button_text" type="button" value="Save Image" />
-                </li>
-                </div>
-                <div style="float:right;">
-                <label class="description" for="element_1">Options</label>
-                <span>
-                    <input id="auto2" name="auto" class="element checkbox" type="checkbox" />
-                    <label class="choice">Auto Redraw</label>
-                    <input id="noLeaves2" name="noLeaves" class="element checkbox" type="checkbox" CHECKED />
-                    <label class="choice">Draw leaves</label>
-                    <label class="description" for="element_1">Tree Spread</label>
-                    <div>
-                    <select class="element select large" id="spread2" name="spread"> 
-                        <option value="0.3" >0.3</option>
-                        <option value="0.4" >0.4</option>
-                        <option value="0.5" >0.5</option>
-                        <option value="0.6" selected="selected">0.6</option>
-                        <option value="0.7" >0.7</option>
-                        <option value="0.8" >0.8</option>
-                        <option value="0.9" >0.9</option>
-                    </select>
-                    </div> 
-                    <div id="ltype">
-                    <label class="description" for="element_1">Leaves Type</label>
-                    <select class="element select large" id="leaveType2" name="leaveType"> 
-                        <option value="1">Small</option>
-                        <option value="2"  selected="selected">Medium</option>
-                        <option value="3">Large</option>
-                        <option value="4">Thin</option>
-                    </select>
-                    </div> 
-                </span> 
-                </div>
-            </form>	
-            <div id="footer">
-            </div>
+        
+        </form>	
+        <div id="footer">
+        </div>
+    </div>
+
+    <div id='form_container3'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2></h2> <br> 
+                <p></p><br> <br>
+            </div>	
+
+        <canvas style="border:4px solid #ffffff; z-index: 4; position:absolute;" id="canvas3"></canvas>
+        
+        
+        </form>	
+        <div id="footer">
+        </div>
+    </div>
+
+    <div id='form_container4'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2></h2> <br> 
+                <p></p><br> <br>
+            </div>	
+
+        <canvas style="border:4px solid #ffffff; z-index: 5; position:absolute;" id="canvas4"></canvas>
+        
+        
+        </form>	
+        <div id="footer">
+        </div>
+    </div>
+
+    <div id='form_container5'>
+        
+        <form id="form_89901" class="appnitro">
+            <div class="form_description">
+                <h2></h2> <br> 
+                <p></p><br> <br>
+            </div>	
+
+        <canvas style="border:4px solid #ffffff; z-index: 6; position:absolute;" id="canvas5"></canvas>
+        
+        
+        </form>	
+        <div id="footer">
+        </div>
     </div>
 
 </div>
 
 
-        <script type="application/javascript">
+<script type="application/javascript">
 
 var tree = {
 
@@ -304,14 +468,14 @@ branch : function(depth) {
 }
 };
 
-            var height = 400;
-            var width = 250;  
+            var height = 600;
+            var width = 800;  
             var intervalId = 0;
             
             //var canvas1 = document.getElementById("canvas1");
             //var canvas2 = document.getElementById("canvas2");
 
-            m = 3; //canvas number
+            m = 5; //canvas number
 
             var canvases = [];
             for( var i = 0; i < m; i++ ) {
