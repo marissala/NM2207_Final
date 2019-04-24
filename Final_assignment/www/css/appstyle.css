@@ -228,12 +228,13 @@ body
 	/*margin:0 auto;*/
 	text-align:left;
   width:100pt;
-  /*height:100pt;*/
+	height:auto;
+	border-style: double;
 }
 
 #form_container0
 {
-	background:#fff;
+	/*background:#fff;*/
 	float: left;
 	/*margin:0 auto;*/
 	text-align:left;
@@ -243,7 +244,7 @@ body
 
 #form_container1
 {
-	background:#fff;
+	/*background:#fff;*/
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
@@ -254,7 +255,7 @@ body
 
 #form_container2
 {
-	background:#fff;
+	/*background:#fff;*/
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
@@ -265,7 +266,7 @@ body
 
 #form_container3
 {
-	background:#fff;
+	/*background:#fff;*/
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
@@ -276,18 +277,7 @@ body
 
 #form_container4
 {
-	background:#fff;
-	float:left;
-	/*margin:0 auto;*/
-	text-align:left;
-  width:200pt;
-	height:550pt;
-	overflow: hidden;
-}
-
-#form_container5
-{
-	background:#fff;
+	/*background:#fff;*/
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
