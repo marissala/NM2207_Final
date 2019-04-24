@@ -84,7 +84,7 @@ body {
    display: block;
    margin: 4px;
    padding: 5px;
-   min-height: 5%;
+	 /*min-height: 5%;*/
    border: 1px solid #9ad4e6;
    border-radius: 7pt;
    background: #9ad4e6;
@@ -112,10 +112,10 @@ body {
             order: 0;
    }
   
-   #main > nav, #main > aside, header, footer {
-    min-height: 50px;
+   /*#main > nav, #main > aside, header, footer {
+    min-height: 50%;
     max-height: 50px;
-   }
+   }*/
   
    #chatBox {
         overflow: scroll;
@@ -140,14 +140,14 @@ body {
      clear:left;
      font-size:160%;
      font-weight:400;
-     margin:0 0 3px;
+     /*margin:0 0 3px;*/
    }
    
    .form_description p
    {
      font-size:95%;
      line-height:130%;
-     margin:0 0 12px;
+     /*margin:0 0 12px;*/
    }
 
    form.appnitro
@@ -214,21 +214,55 @@ body
 	text-align:center;
 }
 
-#wrapper {
-	width: 100%;
-	height: 1000pt;
+#wrapper_one {
+	width: auto;
+	height: 650px;
 	border: 1px solid black;
 	overflow: hidden;
+	position:relative;
+	/*background: #fff;*/
 }
 
-#form_container
+#wrapper_two {
+	width: auto;
+	height: auto;
+	border: 1px solid black;
+	overflow: hidden;
+	background: rgb(193, 221, 247);
+}
+
+#wrapper_three {
+	width: auto;
+	height: auto;
+	border: 1px solid black;
+	overflow: hidden;
+	background: rgb(216, 216, 216);
+}
+
+#tree_titles {
+	float: inherit;
+}
+
+#drawing_controls
 {
 	background:#fff;
 	float: left;
 	/*margin:0 auto;*/
 	text-align:left;
-  width:100pt;
-	height:auto;
+  width:200px;
+	height:740px;
+	border-style: double;
+	overflow: scroll;
+}
+
+#drawing_controls2
+{
+	background:#fff;
+	float: right;
+	/*margin:0 auto;*/
+	text-align:left;
+  width:200px;
+	height:740px;
 	border-style: double;
 }
 
@@ -236,21 +270,28 @@ body
 {
 	/*background:#fff;*/
 	float: left;
-	/*margin:0 auto;*/
+	margin:0 auto;
 	text-align:left;
-  width:200pt;
-  height:550pt;
+  width:100pt;
+	height:550pt;
+	/*position:relative;
+	left:-15%;*/
+	/*position:absolute;*/
+	/*overflow: hidden;*/
 }
 
 #form_container1
 {
 	/*background:#fff;*/
 	float:left;
-	/*margin:0 auto;*/
+	margin:0 auto;
 	text-align:left;
-  width:200pt;
+  width:100pt;
 	height:550pt;
-	overflow: hidden;
+	/*position:relative;*/
+	
+	
+	/*overflow: hidden;*/
 }
 
 #form_container2
@@ -259,9 +300,12 @@ body
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
-  width:200pt;
+  width:100pt;
 	height:550pt;
-	overflow: hidden;
+	/*position:center;*/
+	/*right: 0%;*/
+	
+	/*overflow: hidden;*/
 }
 
 #form_container3
@@ -270,20 +314,24 @@ body
 	float:left;
 	/*margin:0 auto;*/
 	text-align:left;
-  width:200pt;
+  width:100pt;
 	height:550pt;
-	overflow: hidden;
+	/*position:relative;
+	right: -15%;*/
+	/*overflow: hidden;*/
 }
 
 #form_container4
 {
 	/*background:#fff;*/
 	float:left;
-	/*margin:0 auto;*/
+	margin:0 auto;
 	text-align:left;
-  width:200pt;
+  width:100pt;
 	height:550pt;
-	overflow: hidden;
+	/*position:relative;
+	right:-30%;*/
+	/*overflow: hidden;*/
 }
 
 #top
@@ -505,7 +553,7 @@ form li .datepicker
 	border-bottom:1px dotted #ccc;
 	clear:both;
 	display:inline-block;
-	margin:0 0 1em;
+	/*margin:0 0 1em;*/
 }
 
 .form_description[class]
@@ -513,19 +561,22 @@ form li .datepicker
 	display:block;
 }
 
+@font-face { font-family: Soria; src: url('../soria-font.ttf'); }
+
 .form_description h2
 {
+	font-family: Soria;
 	clear:left;
-	font-size:160%;
+	font-size:200%;
 	font-weight:400;
-	margin:0 0 3px;
+	/*margin:0 0 3px;*/
 }
 
 .form_description p
 {
 	font-size:95%;
 	line-height:130%;
-	margin:0 0 12px;
+	/*margin:0 0 12px;*/
 }
 
 form hr
@@ -600,7 +651,7 @@ span.symbol
 
 input.text
 {
-	background:#fff url(../../../images/shadow.gif) repeat-x top;
+	
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
@@ -621,7 +672,7 @@ input.file
 
 textarea.textarea
 {
-	background:#fff url(../../../images/shadow.gif) repeat-x top;
+	
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
@@ -639,7 +690,7 @@ select.select
 	font-size:100%;
 	margin:1px 0;
 	padding:1px 0 0;
-	background:#fff url(../../../images/shadow.gif) repeat-x top;
+
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
